@@ -33,4 +33,12 @@ export class TasksService {
     getTaskById(id:string):Task{
         return this.tasks.find((task) => task.id===id)
     }
+
+    updateTaskStatus(id:string, status:TaskStatuses):Task{
+
+        const task = this.getTaskById(id);
+        task.status = status;
+
+        return task
+    }
 }
